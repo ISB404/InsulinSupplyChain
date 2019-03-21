@@ -52,6 +52,7 @@ then run the following command
 ```
 npm run dev
 ```
+Note: Make sure that MetaMask is Conected to Ganache Network and account
 
 # Deploy smart contract on a public test network (Rinkeby)
 Transaction ID: 0xb9f9d321648d4145e5f9b909fe6780f2d89ec260f5183f4c5fb38677f19ac576
