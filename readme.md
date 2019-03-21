@@ -38,9 +38,9 @@ to compile and test use the following command
 ```
 truffle compile
 truffle test
-``
+```
 to run the front-end part run the following command
-``
+```
 truffle migrate --reset
 truffle develop
 ```
