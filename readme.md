@@ -1,5 +1,5 @@
 # About This Project 
-This Project Is a Simplifayed SupplyChain For Insulin Production tell Consumtion. the prokect have three actors at it's current stage Producer, Pharmacy and Consumer. 
+This Project Is a Simplifayed SupplyChain For Insulin Production tell Consumtion. the project have three actors at it's current stage Producer, Pharmacy and Consumer. 
 In this project the insulin can be represented as:
 -	insulin Batch: a newly created batch of insulin that have yet to be packed
 -	insulin Pack: a pack of insulin vials (10 vials) that can be sold as a to pharmacy
@@ -52,7 +52,7 @@ then run the following command
 ```
 npm run dev
 ```
-Note: Make sure that MetaMask is Conected to Ganache Network and account
+Note: Make sure that MetaMask is Connected to Ganache Network and account
 
 # Deploy smart contract on a public test network (Rinkeby)
 Transaction ID: 0xb9f9d321648d4145e5f9b909fe6780f2d89ec260f5183f4c5fb38677f19ac576
