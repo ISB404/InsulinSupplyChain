@@ -1,3 +1,20 @@
+# About This Project 
+This Project Is a Simplifayed SupplyChain For Insulin Production tell Consumtion. the prokect have three actors at it's current stage Producer, Pharmacy and Consumer. 
+In this project the insulin can be represented as:
+-	insulin Batch: a newly created batch of insulin that have yet to be packed
+-	insulin Pack: a pack of insulin vials (10 vials) that can be sold as a to pharmacy
+-	insulin Vial: a vial of insulin that can be sold to consumer and consumed
+
+an insulin batch Lifecycle:
+Produced => Tested => Packed.
+
+an insulin vial Lifecycle:
+Packed => PackForSale => PackSold => Shipped => Received.
+
+an insulin vial Lifecycle:
+Packed => Shipped => Received => VialForSale => VialSold => Consumed.
+
+
 # UML 
 - You can find the UML diagrams in UML folder 
 
