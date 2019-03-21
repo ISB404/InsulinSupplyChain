@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>StarNotary DAPP Front End</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./index.js"></script>
+</head>
+<style>
+  .split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+
+  /* Control the left side */
+  .left {
+    left: 0;
+  }
+
+  /* Control the right side */
+  .right {
+    right: 0;
+    background-color: gray;
+  }
+
+  /* If you want the content centered horizontally and vertically */
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+</style>
+
+<body>
+  <div class="split left">
+    <div class="">
+      <br/>
+      <h1>Insulin SupplyChain DAPP</h1>
+
+      <hr>
+
+      <br>
+      <h3>Produce Insulin Batch</h1>
+        <!--<br><label for="starName">Star Name:</label><input type="text" id="starName"></input>-->
+        <br><label>BatchID:</label><input type="text" id="BatchID"></input>
+        <br><label>Producer Name:</label><input type="text" id="ProducerName"></input>
+        <br><label>productNotes:</label><input type="text" id="productNotes"></input>
+        <br><br>
+        <button id="ProduceBatch" onclick="App.ProduceBatch()">Produce Batch</button>
+        <button id="TestBatch" onclick="App.TestBatch()">Test Batch</button>
+        <button id="PackBatch" onclick="App.PackBatch()">Pack Batch</button>
+        <br><br>
+        <br>
+        <h3>Insulin Pack</h1>
+          <br><label>PackID:</label><input type="text" id="PackID"></input>
+          <br><label>Pack Price:</label><input type="text" id="PackPrice"></input>
+          <br><label>Payment Amount:</label><input type="text" id="PackPayment"></input>
+          <br><br>
+          <button id="AddPackForSale" onclick="App.AddPackForSale()">Add Pack For Sale</button>
+          <button id="PurchaseInsulinPack" onclick="App.PurchaseInsulinPack()">Purchase Insulin Pack</button>
+          <button id="ShipInsulinaPck" onclick="App.ShipInsulinPack()">Ship Insulin Pacak</button>
+          <button id="ReceiveInsulinPack" onclick="App.ReceiveInsulinPack()">Receive Insulin Pack</button>
+
+          <h3>Insulin Vial</h1>
+            <br><label>VialID:</label><input type="text" id="VialID"></input>
+            <br><label>Vial Price:</label><input type="text" id="VialPrice"></input>
+            <br><label>Payment Amount:</label><input type="text" id="VialPayment"></input>
+            <br><br>
+            <button id="AddVialForSale" onclick="App.AddVialForSale()">Add Vial For Sale</button>
+            <button id="PurchaseInsulinVial" onclick="App.PurchaseInsulinVial()">Purchase Insulin Vial</button>
+            <button id="ConsumeInsulinVial" onclick="App.ConsumeInsulin()">Consume Insulin Vial</button>
+
+          <br>
+          <br>
+
+    </div>
+  </div>
+  <div class="split right">
+    <span id="status"></span>
+    <br />
+    <br />
+    <div style="border-top: black; border-style: solid"><span></span></div>
+    <br/>
+    <h3>Find Product Info</h1>
+    <br><label>ProductID:</label><input type="text" id="ProductID"></input>
+    <br>
+    <button onclick="App.lookUpBatch()">find Batch</button>
+    <button onclick="App.lookUpPack()">find Pack</button>
+    <button onclick="App.lookUpVial()">find Vial</button>
+    <br><br>
+    <br>
+    <span id="status2"></span>
+
+  </div>
+
+  <br>
+</body>
+
+</html

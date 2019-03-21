@@ -1,0 +1,562 @@
+{
+  "contractName": "AccessControl",
+  "abi": [
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addConsumer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renouncePharmacy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceConsumer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isConsumer",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addPharmacy",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "addProducer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isPharmacy",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": true,
+      "inputs": [
+        {
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "isProducer",
+      "outputs": [
+        {
+          "name": "",
+          "type": "bool"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "constant": false,
+      "inputs": [],
+      "name": "renounceProducer",
+      "outputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "payable": false,
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "ProducerAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "ProducerRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "PharmacyAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "PharmacyRemoved",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "ConsumerAdded",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "name": "account",
+          "type": "address"
+        }
+      ],
+      "name": "ConsumerRemoved",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x608060405234801561001057600080fd5b506100293361005e640100000000026401000000009004565b610041336100c5640100000000026401000000009004565b6100593361012c640100000000026401000000009004565b6102e6565b61007f81600061019364010000000002610645179091906401000000009004565b8073ffffffffffffffffffffffffffffffffffffffff167f28b26e7a3d20aedbc5f8f2ebf7da671c0491723a2b78f47a097b0e46dee0714260405160405180910390a250565b6100e681600161019364010000000002610645179091906401000000009004565b8073ffffffffffffffffffffffffffffffffffffffff167fe6c049ab5a3c2ae523452b89e43795966fec2f89b7bf443d91781a7c696d301760405160405180910390a250565b61014d81600261019364010000000002610645179091906401000000009004565b8073ffffffffffffffffffffffffffffffffffffffff167f2977383b0207d39ef14220620b6cf3e6c9b6e78592af90baeef6614ed2fcd2c660405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff16141515156101cf57600080fd5b6101e88282610252640100000000026401000000009004565b1515156101f457600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff161415151561028f57600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b6107d0806102f56000396000f300608060405260043610610099576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063112940f91461009e57806343df7e07146100e157806361e6982d146100f8578063834ff7391461010f578063afd675f81461016a578063ddf80166146101ad578063dfb0fda3146101f0578063f55210221461024b578063f9b867d8146102a6575b600080fd5b3480156100aa57600080fd5b506100df600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102bd565b005b3480156100ed57600080fd5b506100f66102dd565b005b34801561010457600080fd5b5061010d6102e8565b005b34801561011b57600080fd5b50610150600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102f3565b604051808215151515815260200191505060405180910390f35b34801561017657600080fd5b506101ab600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610310565b005b3480156101b957600080fd5b506101ee600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610330565b005b3480156101fc57600080fd5b50610231600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610350565b604051808215151515815260200191505060405180910390f35b34801561025757600080fd5b5061028c600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061036d565b604051808215151515815260200191505060405180910390f35b3480156102b257600080fd5b506102bb61038a565b005b6102c6336102f3565b15156102d157600080fd5b6102da81610395565b50565b6102e6336103ef565b565b6102f133610449565b565b60006103098260006104a390919063ffffffff16565b9050919050565b61031933610350565b151561032457600080fd5b61032d81610537565b50565b6103393361036d565b151561034457600080fd5b61034d81610591565b50565b60006103668260016104a390919063ffffffff16565b9050919050565b60006103838260026104a390919063ffffffff16565b9050919050565b610393336105eb565b565b6103a981600061064590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f28b26e7a3d20aedbc5f8f2ebf7da671c0491723a2b78f47a097b0e46dee0714260405160405180910390a250565b6104038160016106f590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f46520b63a5e163f23aef94d996e90fbbec9b8959d1dd37aeb9bcb5a3a20ac5c960405160405180910390a250565b61045d8160006106f590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fe3f5ed5f263f1f01764a96edfc7d025f511ec5f7d180e8816908b78bcf74f09860405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156104e057600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61054b81600161064590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fe6c049ab5a3c2ae523452b89e43795966fec2f89b7bf443d91781a7c696d301760405160405180910390a250565b6105a581600261064590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f2977383b0207d39ef14220620b6cf3e6c9b6e78592af90baeef6614ed2fcd2c660405160405180910390a250565b6105ff8160026106f590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fb78e9906c5bae930ccf756a5214c9855b1782f0eb30f9566de2384f034af48f360405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561068157600080fd5b61068b82826104a3565b15151561069757600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561073157600080fd5b61073b82826104a3565b151561074657600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050505600a165627a7a72305820fd9fc0d3cf0a67344c4cafd55e2371d94f40549b7fe6dcbaec05371374f0a5a50029",
+  "deployedBytecode": "0x608060405260043610610099576000357c0100000000000000000000000000000000000000000000000000000000900463ffffffff168063112940f91461009e57806343df7e07146100e157806361e6982d146100f8578063834ff7391461010f578063afd675f81461016a578063ddf80166146101ad578063dfb0fda3146101f0578063f55210221461024b578063f9b867d8146102a6575b600080fd5b3480156100aa57600080fd5b506100df600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102bd565b005b3480156100ed57600080fd5b506100f66102dd565b005b34801561010457600080fd5b5061010d6102e8565b005b34801561011b57600080fd5b50610150600480360381019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102f3565b604051808215151515815260200191505060405180910390f35b34801561017657600080fd5b506101ab600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610310565b005b3480156101b957600080fd5b506101ee600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610330565b005b3480156101fc57600080fd5b50610231600480360381019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610350565b604051808215151515815260200191505060405180910390f35b34801561025757600080fd5b5061028c600480360381019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061036d565b604051808215151515815260200191505060405180910390f35b3480156102b257600080fd5b506102bb61038a565b005b6102c6336102f3565b15156102d157600080fd5b6102da81610395565b50565b6102e6336103ef565b565b6102f133610449565b565b60006103098260006104a390919063ffffffff16565b9050919050565b61031933610350565b151561032457600080fd5b61032d81610537565b50565b6103393361036d565b151561034457600080fd5b61034d81610591565b50565b60006103668260016104a390919063ffffffff16565b9050919050565b60006103838260026104a390919063ffffffff16565b9050919050565b610393336105eb565b565b6103a981600061064590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f28b26e7a3d20aedbc5f8f2ebf7da671c0491723a2b78f47a097b0e46dee0714260405160405180910390a250565b6104038160016106f590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f46520b63a5e163f23aef94d996e90fbbec9b8959d1dd37aeb9bcb5a3a20ac5c960405160405180910390a250565b61045d8160006106f590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fe3f5ed5f263f1f01764a96edfc7d025f511ec5f7d180e8816908b78bcf74f09860405160405180910390a250565b60008073ffffffffffffffffffffffffffffffffffffffff168273ffffffffffffffffffffffffffffffffffffffff16141515156104e057600080fd5b8260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905092915050565b61054b81600161064590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fe6c049ab5a3c2ae523452b89e43795966fec2f89b7bf443d91781a7c696d301760405160405180910390a250565b6105a581600261064590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167f2977383b0207d39ef14220620b6cf3e6c9b6e78592af90baeef6614ed2fcd2c660405160405180910390a250565b6105ff8160026106f590919063ffffffff16565b8073ffffffffffffffffffffffffffffffffffffffff167fb78e9906c5bae930ccf756a5214c9855b1782f0eb30f9566de2384f034af48f360405160405180910390a250565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561068157600080fd5b61068b82826104a3565b15151561069757600080fd5b60018260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055505050565b600073ffffffffffffffffffffffffffffffffffffffff168173ffffffffffffffffffffffffffffffffffffffff161415151561073157600080fd5b61073b82826104a3565b151561074657600080fd5b60008260000160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555050505600a165627a7a72305820fd9fc0d3cf0a67344c4cafd55e2371d94f40549b7fe6dcbaec05371374f0a5a50029",
+  "sourceMap": "223:102:0:-;;;295:27;8:9:-1;5:2;;;30:1;27;20:12;5:2;295:27:0;603:24:1;616:10;603:12;;;:24;;;:::i;:::-;605::2;618:10;605:12;;;:24;;;:::i;:::-;603::3;616:10;603:12;;;:24;;;:::i;:::-;223:102:0;;1338:114:1;1392:22;1406:7;1392:9;:13;;;;;;:22;;;;;:::i;:::-;1439:7;1425:22;;;;;;;;;;;;1338:114;:::o;1341:115:2:-;1395:23;1410:7;1395:10;:14;;;;;;:23;;;;;:::i;:::-;1443:7;1429:22;;;;;;;;;;;;1341:115;:::o;1338:114:3:-;1392:22;1406:7;1392:9;:13;;;;;;:22;;;;;:::i;:::-;1439:7;1425:22;;;;;;;;;;;;1338:114;:::o;245:167:4:-;336:1;317:21;;:7;:21;;;;309:30;;;;;;;;354:18;358:4;364:7;354:3;;;:18;;;:::i;:::-;353:19;345:28;;;;;;;;403:4;380;:11;;:20;392:7;380:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;245:167;;:::o;726:157::-;803:4;842:1;823:21;;:7;:21;;;;815:30;;;;;;;;858:4;:11;;:20;870:7;858:20;;;;;;;;;;;;;;;;;;;;;;;;;851:27;;726:157;;;;:::o;223:102:0:-;;;;;;;",
+  "deployedSourceMap": "223:102:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1013:90:1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1013:90:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;1174:73:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1174:73:2;;;;;;1171::1;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1171:73:1;;;;;;849:103;;8:9:-1;5:2;;;30:1;27;20:12;5:2;849:103:1;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1016:90:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1016:90:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;1013::3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1013:90:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;851:104:2;;8:9:-1;5:2;;;30:1;27;20:12;5:2;851:104:2;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;849:103:3;;8:9:-1;5:2;;;30:1;27;20:12;5:2;849:103:3;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1171:73;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1171:73:3;;;;;;1013:90:1;755:22;766:10;755;:22::i;:::-;747:31;;;;;;;;1077:21;1090:7;1077:12;:21::i;:::-;1013:90;:::o;1174:73:2:-;1215:27;1231:10;1215:15;:27::i;:::-;1174:73::o;1171::1:-;1212:27;1228:10;1212:15;:27::i;:::-;1171:73::o;849:103::-;906:4;925:22;939:7;925:9;:13;;:22;;;;:::i;:::-;918:29;;849:103;;;:::o;1016:90:2:-;757:22;768:10;757;:22::i;:::-;749:31;;;;;;;;1080:21;1093:7;1080:12;:21::i;:::-;1016:90;:::o;1013::3:-;755:22;766:10;755;:22::i;:::-;747:31;;;;;;;;1077:21;1090:7;1077:12;:21::i;:::-;1013:90;:::o;851:104:2:-;908:4;927:23;942:7;927:10;:14;;:23;;;;:::i;:::-;920:30;;851:104;;;:::o;849:103:3:-;906:4;925:22;939:7;925:9;:13;;:22;;;;:::i;:::-;918:29;;849:103;;;:::o;1171:73::-;1212:27;1228:10;1212:15;:27::i;:::-;1171:73::o;1338:114:1:-;1392:22;1406:7;1392:9;:13;;:22;;;;:::i;:::-;1439:7;1425:22;;;;;;;;;;;;1338:114;:::o;1559:123:2:-;1616:26;1634:7;1616:10;:17;;:26;;;;:::i;:::-;1669:7;1653:24;;;;;;;;;;;;1559:123;:::o;1555:122:1:-;1612:25;1629:7;1612:9;:16;;:25;;;;:::i;:::-;1664:7;1648:24;;;;;;;;;;;;1555:122;:::o;726:157:4:-;803:4;842:1;823:21;;:7;:21;;;;815:30;;;;;;;;858:4;:11;;:20;870:7;858:20;;;;;;;;;;;;;;;;;;;;;;;;;851:27;;726:157;;;;:::o;1341:115:2:-;1395:23;1410:7;1395:10;:14;;:23;;;;:::i;:::-;1443:7;1429:22;;;;;;;;;;;;1341:115;:::o;1338:114:3:-;1392:22;1406:7;1392:9;:13;;:22;;;;:::i;:::-;1439:7;1425:22;;;;;;;;;;;;1338:114;:::o;1555:122::-;1612:25;1629:7;1612:9;:16;;:25;;;;:::i;:::-;1664:7;1648:24;;;;;;;;;;;;1555:122;:::o;245:167:4:-;336:1;317:21;;:7;:21;;;;309:30;;;;;;;;354:18;358:4;364:7;354:3;:18::i;:::-;353:19;345:28;;;;;;;;403:4;380;:11;;:20;392:7;380:20;;;;;;;;;;;;;;;;:27;;;;;;;;;;;;;;;;;;245:167;;:::o;478:170::-;572:1;553:21;;:7;:21;;;;545:30;;;;;;;;589:18;593:4;599:7;589:3;:18::i;:::-;581:27;;;;;;;;638:5;615:4;:11;;:20;627:7;615:20;;;;;;;;;;;;;;;;:28;;;;;;;;;;;;;;;;;;478:170;;:::o",
+  "source": "pragma solidity ^ 0.4 .24;\n\n// Import the library 'Roles'\nimport \"./ConsumerRole.sol\";\nimport \"./PharmacyRole.sol\";\nimport \"./ProducerRole.sol\";\n\n// Define a contract 'ConsumerRole' to manage this role - add, remove, check\ncontract AccessControl is ConsumerRole, PharmacyRole, ProducerRole {\n\n  constructor() public {\n\n  }\n\n}",
+  "sourcePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/AccessControl.sol",
+  "ast": {
+    "absolutePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/AccessControl.sol",
+    "exportedSymbols": {
+      "AccessControl": [
+        15
+      ]
+    },
+    "id": 16,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:26:0"
+      },
+      {
+        "absolutePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/ConsumerRole.sol",
+        "file": "./ConsumerRole.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 16,
+        "sourceUnit": 119,
+        "src": "58:28:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/PharmacyRole.sol",
+        "file": "./PharmacyRole.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 16,
+        "sourceUnit": 222,
+        "src": "87:28:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/ProducerRole.sol",
+        "file": "./ProducerRole.sol",
+        "id": 4,
+        "nodeType": "ImportDirective",
+        "scope": 16,
+        "sourceUnit": 325,
+        "src": "116:28:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5,
+              "name": "ConsumerRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 118,
+              "src": "249:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsumerRole_$118",
+                "typeString": "contract ConsumerRole"
+              }
+            },
+            "id": 6,
+            "nodeType": "InheritanceSpecifier",
+            "src": "249:12:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7,
+              "name": "PharmacyRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 221,
+              "src": "263:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PharmacyRole_$221",
+                "typeString": "contract PharmacyRole"
+              }
+            },
+            "id": 8,
+            "nodeType": "InheritanceSpecifier",
+            "src": "263:12:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 9,
+              "name": "ProducerRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 324,
+              "src": "277:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ProducerRole_$324",
+                "typeString": "contract ProducerRole"
+              }
+            },
+            "id": 10,
+            "nodeType": "InheritanceSpecifier",
+            "src": "277:12:0"
+          }
+        ],
+        "contractDependencies": [
+          118,
+          221,
+          324
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15,
+        "linearizedBaseContracts": [
+          15,
+          324,
+          221,
+          118
+        ],
+        "name": "AccessControl",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 13,
+              "nodeType": "Block",
+              "src": "316:6:0",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 14,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "306:2:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "316:0:0"
+            },
+            "scope": 15,
+            "src": "295:27:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 16,
+        "src": "223:102:0"
+      }
+    ],
+    "src": "0:325:0"
+  },
+  "legacyAST": {
+    "absolutePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/AccessControl.sol",
+    "exportedSymbols": {
+      "AccessControl": [
+        15
+      ]
+    },
+    "id": 16,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 1,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".24"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:26:0"
+      },
+      {
+        "absolutePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/ConsumerRole.sol",
+        "file": "./ConsumerRole.sol",
+        "id": 2,
+        "nodeType": "ImportDirective",
+        "scope": 16,
+        "sourceUnit": 119,
+        "src": "58:28:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/PharmacyRole.sol",
+        "file": "./PharmacyRole.sol",
+        "id": 3,
+        "nodeType": "ImportDirective",
+        "scope": 16,
+        "sourceUnit": 222,
+        "src": "87:28:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "absolutePath": "/home/isb/Desktop/Udacity Blockchain/Ethereum/p7/contracts/accesscontrol/ProducerRole.sol",
+        "file": "./ProducerRole.sol",
+        "id": 4,
+        "nodeType": "ImportDirective",
+        "scope": 16,
+        "sourceUnit": 325,
+        "src": "116:28:0",
+        "symbolAliases": [],
+        "unitAlias": ""
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 5,
+              "name": "ConsumerRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 118,
+              "src": "249:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ConsumerRole_$118",
+                "typeString": "contract ConsumerRole"
+              }
+            },
+            "id": 6,
+            "nodeType": "InheritanceSpecifier",
+            "src": "249:12:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 7,
+              "name": "PharmacyRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 221,
+              "src": "263:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_PharmacyRole_$221",
+                "typeString": "contract PharmacyRole"
+              }
+            },
+            "id": 8,
+            "nodeType": "InheritanceSpecifier",
+            "src": "263:12:0"
+          },
+          {
+            "arguments": null,
+            "baseName": {
+              "contractScope": null,
+              "id": 9,
+              "name": "ProducerRole",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 324,
+              "src": "277:12:0",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_ProducerRole_$324",
+                "typeString": "contract ProducerRole"
+              }
+            },
+            "id": 10,
+            "nodeType": "InheritanceSpecifier",
+            "src": "277:12:0"
+          }
+        ],
+        "contractDependencies": [
+          118,
+          221,
+          324
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 15,
+        "linearizedBaseContracts": [
+          15,
+          324,
+          221,
+          118
+        ],
+        "name": "AccessControl",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 13,
+              "nodeType": "Block",
+              "src": "316:6:0",
+              "statements": []
+            },
+            "documentation": null,
+            "id": 14,
+            "implemented": true,
+            "isConstructor": true,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 11,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "306:2:0"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 12,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "316:0:0"
+            },
+            "scope": 15,
+            "src": "295:27:0",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "public"
+          }
+        ],
+        "scope": 16,
+        "src": "223:102:0"
+      }
+    ],
+    "src": "0:325:0"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.25+commit.59dbf8f1.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.2",
+  "updatedAt": "2019-03-20T19:22:10.031Z"
+}
